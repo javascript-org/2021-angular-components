@@ -1,0 +1,58 @@
+<p>interpolation works!</p>
+<h4>Simple interpolation</h4>
+Welcome {{firstName}} , {{lastName}}
+
+<hr/>
+<h4> Method call with interpolation </h4>
+The sum is {{getSum(10,20)}}
+
+<hr/>
+<h4>Apply Style with interpolation</h4>
+<p>Show me <span class = "{{styleTextColor}}">red</span></p>
+<p style.color={{styleTextColor}}>This is in red</p>
+
+<hr/>
+<h4>ImageUrl with interpolation</h4>
+<img src="{{imgUrl}}" />
+
+<hr/>
+<h4>Iterate over array and interpolation</h4>
+<ul>
+<li *ngFor="let i of items">
+    {{i.code}}
+</li>
+</ul>
+
+<hr/>
+<h4>Pipes with interpolation</h4>
+{{firstName | uppercase}}
+<br/>
+{{firstName | uppercase | lowercase}}
+<br/>
+{{items | json}}
+
+<hr/>
+
+<h4>With template variable</h4>
+<label>Enter Your Name</label>
+<input (keyup)="0" #name>
+<p>Welcome {{name.value}} </p>
+
+<p>We also use (keyup)="0" on the input element. It does nothing but it forces the angular run the change detection, which in turn updates the view.</p>
+
+<h4>Cross-site Scripting or XSS</h4>
+<p>Angular Sanitizes everything before inserting into DOM, thus preventing Cross-Site Scripting Security bugs (XSS). For example values from the component property, attribute, style, class binding, or interpolation, etc are sanitized. The script in the following example is not invoked but shown as it is.
+
+</p>
+<p>{{scriptContent}}</p>
+<p>{{divContent}}</p>
+
+
+<h4>NgNonBindable</h4>
+<p>Use ngNonBindable to tell Angular not to compile or bind the contents of the current DOM element. I.e any expression is not evaluated but shown as it is.</p>
+
+<p>Evaluate: {{firstName}}</p>
+<p ngNonBindable>Do not evaluate: {{firstName}}</p>
+
+<h4>The safe navigation operator ( ? )</h4>
+<h4>The non-null assertion operator ( ! )</h4>
