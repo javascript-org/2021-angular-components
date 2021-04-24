@@ -6,6 +6,9 @@ import { ComponentHelloComponent } from './components/component-hello/component-
 import { InterpolationComponent } from './components/data-binding/interpolation/interpolation.component';
 import { PropertyComponent } from './components/data-binding/property/property.component';
 import { EventsComponent } from './components/data-binding/events/events.component';
+import { TwoWayComponent } from './components/data-binding/two-way/two-way.component';
+import { FormsModule } from '@angular/forms';
+import { CounterComponent } from './components/data-binding/two-way/counter-component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,13 @@ import { EventsComponent } from './components/data-binding/events/events.compone
     InterpolationComponent,
     PropertyComponent,
     EventsComponent,
+    TwoWayComponent,
+    CounterComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule
   ],
   providers: [],
-  bootstrap: [EventsComponent]
+  bootstrap: [TwoWayComponent]
 })
 export class AppModule { }
