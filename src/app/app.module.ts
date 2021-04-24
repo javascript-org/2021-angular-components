@@ -19,6 +19,6 @@ import { EventsComponent } from './components/data-binding/events/events.compone
     BrowserModule
   ],
   providers: [],
-  bootstrap: [PropertyComponent]
+  bootstrap: [EventsComponent]
 })
 export class AppModule { }
