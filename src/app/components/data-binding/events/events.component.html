@@ -1,0 +1,20 @@
+<p>events works!</p>
+
+<button (click)="onClickButton()">Click One Event Now</button>
+<button on-click="onClickButton()">Click One Event Now</button>
+
+Click of button: {{counter}}
+
+
+<button (click)="onClickButton(); onClickButton() ">Click Multi Event Now</button>
+
+Click of button: {{counter}}
+
+<hr>
+
+EventObject 
+<input type="text" (input)="handleInput($event)">
+<p>Input Value: {{value}} </p>
+
+<input #el type="text" (input)="handleInput1(el)">
+<p>Input Value: {{value}} </p>

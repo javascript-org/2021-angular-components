@@ -1,0 +1,41 @@
+<p>two-way works!</p>
+
+<h4>
+    property [] + event() = two way [()] : custom
+</h4>
+
+
+<input type="text" [value]="name" (input)="handleInput($event)">
+<p> You entered {{name}}</p>
+<button (click)="clear()">Clear</button>
+
+<hr>
+<h4>
+    default 2 way binding [()]. Import FormsModule to use [()].
+</h4>
+<input type="text"  [(ngModel)]="fname">
+first name {{fname}}
+
+<h4>Using Input & Output</h4>
+<app-counter 
+[countInput]="count"
+(countOutput)="handleOutput($event)"
+></app-counter>
+
+<app-counter 
+bind-countInput="count"
+on-countOutput="handleOutput($event)"
+></app-counter>
+
+<br>
+{{message}}
+
+<pre>
+    line 22: countInput is a input property of child component app-counter. 
+             we assigned value of parent property count to it.
+
+    line 23: countOutput is an output property of child component app-counter. 
+             we used it as event() and invoked parent method by passing event emitted data.
+             This emitted data will be displayed by parent component variable called message.
+             See below.     
+</pre>

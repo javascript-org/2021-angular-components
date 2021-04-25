@@ -1,0 +1,21 @@
+<p>property works!</p>
+<hr/>
+
+<h4 [innerText]="textContent"></h4>
+<h4 bind-innerText="textContent"></h4>
+
+<h4 [innerHTML]="textContent"></h4>
+<h4 bind-innerHTML="textContent"></h4>
+
+<p [style.color]="textColor">textContent</p>
+<p bind-style.color="textColor">textContent</p>
+
+<p [style]="styleObject">OK </p>
+<p bind-style="styleObject">OK </p>
+
+
+<button [disabled]="true">Welcome</button>
+<button [disabled]=true>Welcome</button>
+<button [disabled]="isDisabled">Welcome</button>
+<button [disabled]="isDisabled1">Welcome</button>
+{{isDisabled1}}
