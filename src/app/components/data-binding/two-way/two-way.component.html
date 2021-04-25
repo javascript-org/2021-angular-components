@@ -16,12 +16,26 @@
 <input type="text"  [(ngModel)]="fname">
 first name {{fname}}
 
+<hr>
+<h4>Using Parent Method With @ViewChild</h4>
+<button (click)="increment()">Increment From Parent</button>
+<button (click)="decrement()">Decrement From Parent</button>
+<app-counter [countInput]="count"></app-counter>
+
+<hr>
+<h4>Child Template Reference</h4>
+<button (click)="child.increment()">Increment From Parent</button>
+<button (click)="child.decrement()">Decrement From Parent</button>
+<app-counter [countInput]="count" #child></app-counter>
+
+<hr>
 <h4>Using Input & Output</h4>
 <app-counter 
 [countInput]="count"
 (countOutput)="handleOutput($event)"
 ></app-counter>
 
+<hr>
 <app-counter 
 bind-countInput="count"
 on-countOutput="handleOutput($event)"
@@ -31,11 +45,12 @@ on-countOutput="handleOutput($event)"
 {{message}}
 
 <pre>
-    line 22: countInput is a input property of child component app-counter. 
+     countInput [bind-countInput] is a input property of child component app-counter. 
              we assigned value of parent property count to it.
 
-    line 23: countOutput is an output property of child component app-counter. 
+     countOutput (on-countInput) is an output property of child component app-counter. 
              we used it as event() and invoked parent method by passing event emitted data.
              This emitted data will be displayed by parent component variable called message.
              See below.     
 </pre>
+

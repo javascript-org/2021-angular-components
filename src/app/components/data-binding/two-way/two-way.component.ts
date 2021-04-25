@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CounterComponent } from './counter-component';
 
 @Component({
   selector: 'app-two-way',
@@ -29,7 +30,19 @@ export class TwoWayComponent implements OnInit {
   }
 
   count:number=100;
+
+  @ViewChild(CounterComponent) counterComponent!: CounterComponent;
+
   ngOnInit(): void {
   }
 
+  increment()
+  {
+    this.counterComponent.increment();
+  }
+
+  decrement()
+  {
+    this.counterComponent.decrement();
+  }
 }

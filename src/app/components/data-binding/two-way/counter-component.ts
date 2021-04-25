@@ -4,7 +4,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   selector: 'app-counter',
   template: `
     count : {{countVal}}
-   <button (click)="incrementCount()">Increment</button>
+   <button (click)="incrementCount()">Increment From Child</button>
   `
 })
 export class CounterComponent implements OnInit {
@@ -23,6 +23,16 @@ export class CounterComponent implements OnInit {
       this.countEvent.emit("even");
       else 
       this.countEvent.emit("odd");
+  }
+
+  increment()
+  {
+    this.countVal++;
+  }
+
+  decrement()
+  {
+    this.countVal--;
   }
 
 }
